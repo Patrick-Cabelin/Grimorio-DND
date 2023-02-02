@@ -8,7 +8,7 @@ const grimorio = document.getElementById("grimorio");
 const folha = document.getElementById("papeis");
 const pagEsquerda = folhaDePergaminho.children[0];
 const pagDireita = folhaDePergaminho.children[1];
-let NumeradorDaMagia = 0
+let NumeradorDaMagia = -1
 
 
 class BuscarMagia {
@@ -33,16 +33,17 @@ class Magias extends BuscarMagia{
       return Pergaminho
     }
 
-    // NumeradorDaMagia(){
-    //   let IDM = Math.floor(Math.random()*1000/3)
-    //   return IDM
-    // }
+   
 
     async EscreverOsPergaminhos(){
-      
+      if(NumeradorDaMagia <=-1){
+        
+        NumeradorDaMagia= -1
+        return
+      }
       let pergaminhos = []
       await this.CriarPergaminho().then(Pergaminho => {
-        this.pergaminhos = Pergaminho.map( () =>
+             this.pergaminhos = Pergaminho.map( () =>
           { 
             
             return pergaminhos = Pergaminho
@@ -57,14 +58,14 @@ class Magias extends BuscarMagia{
   
   SlotDaMagia(pergaminhos ) {
     
-      // console.log(pergaminhos)
+      // 
       // let magiaIndex = NumeradorDaMagia
       // let magiaIndex = 0
      
       const indentificadorMagia = pergaminhos?.[NumeradorDaMagia]?.index
       const pontoMagico= this.pontoDeBusca+indentificadorMagia
       
-      // console.log( NumeradorDaMagia,'zero')
+      // 
       this.MoldarPergaminho(pontoMagico)
       
   
@@ -72,13 +73,17 @@ class Magias extends BuscarMagia{
    
     
     async MoldarPergaminho(pontoMagico) {
+     
       
+      if(pontoMagico == 'https://www.dnd5eapi.co/api/spells/undefined'){
+        
+        return
+      }
       const magica = await fetch(pontoMagico)?.then(resposta => {
         let transmute = resposta.json()
         
         return transmute
       })  
-      
       const { name, school, classes, ...rest } = magica
 
       const Magika = {
@@ -96,11 +101,7 @@ class Magias extends BuscarMagia{
     MostrarMagika(Magika){
      
       let escreveMagika = ({Magika}) => {
-        if(Magika.nome === undefined){
-          console.log(Magika.nome)
-          return
-        }
-
+    
         return `
           <h1>${Magika.nome}</h1>
           <p>Escola: ${Magika.escola}</p>
@@ -138,8 +139,8 @@ class ForjaGrimorio extends Magias{
 
   
   async abrirGrimorio() {
-    await TrazMagika()
     NumeradorDaMagia++
+    await TrazMagika()
     if (capa) {
       grimorio.classList.add("aberto");
       
@@ -148,8 +149,7 @@ class ForjaGrimorio extends Magias{
       pagEsquerda.classList.remove("aberto");
       pagDireita.classList.remove("aberto");
       capa = false;
-      --NumeradorDaMagia
-      // console.log(NumeradorDaMagia,'casiohaios')
+      
     }
     
     
@@ -157,11 +157,13 @@ class ForjaGrimorio extends Magias{
   }
    
   async fecharGrimorio() {
-    console.log(NumeradorDaMagia,'aids' )
+  
+   
     NumeradorDaMagia--
+   
+         
+         
     await TrazMagika()
-    console.log(NumeradorDaMagia,'aif')
-
     if (!capa && NumeradorDaMagia < 0) {
       grimorio.classList.remove("aberto");
       
@@ -170,7 +172,9 @@ class ForjaGrimorio extends Magias{
       pagEsquerda.classList.add("aberto");
       pagDireita.classList.add("aberto");
       capa = true;
+      NumeradorDaMagia = 0
     }
+    
     
   }
   
