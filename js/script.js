@@ -149,7 +149,7 @@ class ForjaGrimorio extends Magias{
       pagDireita.classList.remove("aberto");
       capa = false;
       --NumeradorDaMagia
-      console.log(NumeradorDaMagia,'casiohaios')
+      // console.log(NumeradorDaMagia,'casiohaios')
     }
     
     
