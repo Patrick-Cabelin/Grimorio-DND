@@ -116,25 +116,22 @@ class Magias extends BuscarMagia{
 
     }
     MostrarMagikaEsquerda({magikaEscrita,Magika}) {
-      
+     
       let pergaminhoPadrao=this.pergaminhos[0]
       let magiaAtual = pergaminhoPadrao.filter((posi) =>posi.index==Magika.resto.index)
       let indexDaMagiaAtual = pergaminhoPadrao.findIndex((posi)=> posi.index==magiaAtual[0].index)
      
-      
       const prox = async ()=> {await this.MoldarPergaminho(this.pontoDeBusca+proximaMagia)}
-      let proximaMagia = pergaminhoPadrao.slice((indexDaMagiaAtual*2 + 1) % pergaminhoPadrao.length, (indexDaMagiaAtual+ 2) % pergaminhoPadrao.length)[0].index
-     
       
-      
+      let proximaMagia = pergaminhoPadrao.slice((indexDaMagiaAtual + 1) % pergaminhoPadrao.length, (indexDaMagiaAtual+ 2) % pergaminhoPadrao.length)[0].index
+    
       if (ctrl) {
       
         prox()
         ctrl = false
     }  
-  
-
-      pagEsquerda.innerHTML = magikaEscrita
+     pagEsquerda.innerHTML = magikaEscrita
+     
     }
   }
  
@@ -144,6 +141,7 @@ class ForjaGrimorio extends Magias{
   async abrirGrimorio() {
     NumeradorDaMagia++
     await TrazMagika()
+    
     if (capa) {
       grimorio.classList.add("aberto");
       
@@ -154,7 +152,7 @@ class ForjaGrimorio extends Magias{
       capa = false;
       
     }
-   
+    this.passaPagina()
   }
    
   async fecharGrimorio() {
@@ -162,6 +160,7 @@ class ForjaGrimorio extends Magias{
     NumeradorDaMagia--
  
     await TrazMagika()
+    this.passaPagina()
     if (!capa && NumeradorDaMagia < 0) {
       grimorio.classList.remove("aberto");
       
