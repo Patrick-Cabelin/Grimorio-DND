@@ -89,17 +89,14 @@ class Magias extends BuscarMagia{
       this.EscreveMagika ({Magika})
     } 
     
-    EscreveMagika ({Magika})  {
-      
+    EscreveMagika ({Magika})  { 
       const magikaEscrita = `
       <h1>${Magika.nome}</h1>
       <p>Escola: ${Magika.escola}</p>
         <p>Classes:</p>
         <ul>
-        ${Magika.classes.forEach(classe => 
-          `<li>${classe.name}</li>)}
-            <li>${classe.name}</li>)}
-            <li>${classe.name}</li>`)}
+        ${Magika.classes.map(classe => 
+          `<li>${classe.name}</li> `)}
             </ul>
             `
             this.MostrarMagikaDireita(magikaEscrita)
