@@ -90,15 +90,34 @@ class Magias extends BuscarMagia{
     } 
     
     EscreveMagika ({Magika})  { 
+    
       const magikaEscrita = `
-      <h1>${Magika.nome}</h1>
-      <p>Escola: ${Magika.escola}</p>
-        <p>Classes:</p>
-        <ul>
-        ${Magika.classes.map(classe => 
-          `<li>${classe.name}</li> `)}
-            </ul>
-            `
+      <div class="titulo">
+        <h1><a href="https://www.dndbeyond.com/spells/${Magika.resto.index}" target="_blank">${Magika.nome}</a></h1>
+         <img src="assets/Componentes/Concentração.png" alt="">
+      </div>
+      
+      <div class="componentes">
+        <img src="assets/Componentes/Gestal.png" alt="">
+        <img src="assets/Componentes/Material.png" alt="">
+        <img src="assets/Componentes/Verbal.png" alt="">
+      </div>
+
+      <div class="escola">
+       <span>Escola: ${Magika.escola}</span>
+        
+      </div>
+
+        <ul class="classes">
+          <span> Classes</span>
+            ${Magika.classes.map(classe => 
+              `<li>
+                <span>${classe.name}</span>
+               
+              </li>`).join('')}
+        </ul>
+              `
+
             this.MostrarMagikaDireita(magikaEscrita)
             if (ctrl) {
         

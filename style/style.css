@@ -2,10 +2,8 @@
 
 :root{
 
-    --cor-Rosa-Fraco:#D98F9D;
-    --cor-Rosa-Pastel:#99697F;
-    --cor-Laranja-Longe:#F2C7AE;
-    --cor-Roxo:#4D405A;
+  
+    --cor-Roxo:#551199;
     --cor-Roxo-Vinho:#40354b;
 
     --font-padrao: 'MedievalSharp', cursive;
@@ -100,10 +98,59 @@ h1{
     margin: 1.6rem 0;
     font-size: 2.4rem;
     line-height: 1.2rem;
+    padding-left: 4rem;
 }
 
-p{
-    padding: 1.5rem;
-    font-size: 1.7rem;
+span{
     
+    font-size: 1.5rem;
+
+}
+
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:2.5rem;
+}
+
+
+
+a{
+    text-decoration: none;
+    color: var(--cor-Roxo);
+}
+
+a:hover{
+    color:#a917b6;
+    text-shadow: 2px 3px 2px var(--cor-Roxo);
+    text-decoration: underline;
+}
+.componentes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+.escola{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 9.9rem;
+    margin-top: 1.5rem;
+}
+.classes{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-direction: column;
+}
+
+ul li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 10rem;
 }
