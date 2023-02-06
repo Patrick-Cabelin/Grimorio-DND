@@ -97,7 +97,7 @@ h1{
     text-align: center;
     margin: 1.6rem 0;
     font-size: 2.4rem;
-    line-height: 1.2rem;
+    line-height: 2rem;
     padding-left: 4rem;
 }
 
@@ -138,13 +138,13 @@ a:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 9.9rem;
+    gap: 5.5rem;
     margin-top: 1.5rem;
 }
 .classes{
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: .5rem;
     flex-direction: column;
 }
 

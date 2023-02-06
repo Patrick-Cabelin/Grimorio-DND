@@ -90,22 +90,42 @@ class Magias extends BuscarMagia{
     } 
     
     EscreveMagika ({Magika})  { 
-    
+      let concentration = `<img src='' alt=''class='concentration'/>`
+      let componentes= Magika.resto.components
+
+      if(Magika.resto.concentration){
+        
+        concentration = `<abbr title='Concentração'><img src="assets/Componentes/Concentração.png" class='concentration' alt=""></abbr>`
+      }
+      
+
       const magikaEscrita = `
       <div class="titulo">
-        <h1><a href="https://www.dndbeyond.com/spells/${Magika.resto.index}" target="_blank">${Magika.nome}</a></h1>
-         <img src="assets/Componentes/Concentração.png" alt="">
+      <h1 id='Concentra'><a href="https://www.dndbeyond.com/spells/${Magika.resto.index}" target="_blank">${Magika.nome}</a></h1>
+        ${concentration}
       </div>
       
       <div class="componentes">
-        <img src="assets/Componentes/Gestal.png" alt="">
-        <img src="assets/Componentes/Material.png" alt="">
-        <img src="assets/Componentes/Verbal.png" alt="">
+        ${componentes.map(
+          componente=>{
+           
+            switch (componente) {
+              case 'V':
+                return `<abbr title='Verbal'><img src="assets/Componentes/Verbal.png" alt=""></abbr>`
+              case 'S':
+                return `<abbr title='Gestual'><img src="assets/Componentes/Gestal.png" alt=""></abbr>`
+              case 'M':
+                return `<abbr title='Material'><img src="assets/Componentes/Material.png" alt=""></abbr>`
+              default:
+                return ''
+            }
+          }
+        ).join('')}
       </div>
 
       <div class="escola">
        <span>Escola: ${Magika.escola}</span>
-        
+         <img src="assets/Escolas/${Magika.escola}.png" alt="">
       </div>
 
         <ul class="classes">
@@ -113,7 +133,7 @@ class Magias extends BuscarMagia{
             ${Magika.classes.map(classe => 
               `<li>
                 <span>${classe.name}</span>
-               
+                <img src="assets/Classes/${classe.name}.png" alt="">
               </li>`).join('')}
         </ul>
               `
