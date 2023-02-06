@@ -50,3 +50,6 @@ sendo mais expecifico usei o ponto de spell, já que isso é um grimório
 - [https://www.flaticon.com/free-icons/magic ] magic icons  Magic icons created by Vitaly Gorbachev - Flaticon
 - [https://www.flaticon.com/free-icons/fantasy]  fantasy icons  Fantasy icons created by Freepik - Flaticon
 - [https://www.flaticon.com/free-icons/music-and-multimedia ] music and multimedia icons  Music and multimedia icons created by Freepik - Flaticon
+
+
+DEPLOY: https://patrick-cabelin.github.io/Grimorio-DND/
