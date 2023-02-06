@@ -7,7 +7,7 @@
 sendo mais expecifico usei o ponto de spell, já que isso é um grimório 
 
 - ps : caso queira conferir as magia em português, ja que se você clicar no nome da magia irar te levar para o site do dndbeyond é estar em inglês tem esse site
- - [https://dnd5spells.rpgist.net/spells]
+   - [https://dnd5spells.rpgist.net/spells]
 ## conhecimentos 
 
 - Requisição de API
