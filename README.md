@@ -6,6 +6,8 @@
 - point : [https://www.dnd5eapi.co/]
 sendo mais expecifico usei o ponto de spell, já que isso é um grimório 
 
+- ps : caso queira conferir as magia em português, ja que se você clicar no nome da magia irar te levar para o site do dndbeyond é estar em inglês tem esse site
+ - [https://dnd5spells.rpgist.net/spells]
 ## conhecimentos 
 
 - Requisição de API
@@ -50,6 +52,7 @@ sendo mais expecifico usei o ponto de spell, já que isso é um grimório
 - [https://www.flaticon.com/free-icons/magic ] magic icons  Magic icons created by Vitaly Gorbachev - Flaticon
 - [https://www.flaticon.com/free-icons/fantasy]  fantasy icons  Fantasy icons created by Freepik - Flaticon
 - [https://www.flaticon.com/free-icons/music-and-multimedia ] music and multimedia icons  Music and multimedia icons created by Freepik - Flaticon
+
 
 
 DEPLOY: https://patrick-cabelin.github.io/Grimorio-DND/
